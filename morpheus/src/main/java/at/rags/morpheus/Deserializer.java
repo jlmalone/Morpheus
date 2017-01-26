@@ -5,6 +5,7 @@ import android.util.ArrayMap;
 import java.lang.reflect.Field;
 import java.util.HashMap;
 
+import android.util.Log;
 import at.rags.morpheus.Exceptions.NotExtendingResourceException;
 
 /**
@@ -48,6 +49,12 @@ public class Deserializer {
     } catch (ClassCastException e) {
       throw new NotExtendingResourceException(objectClass + " is not inheriting Resource");
     }
+  catch (NullPointerException e)
+  {
+    Log.v("EMERGENCY","resourceName"+resourceName);
+   e.printStackTrace();
+    throw e;
+  }
   }
 
   /**

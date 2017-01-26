@@ -1,9 +1,6 @@
 package at.rags.morpheus;
 
-import android.util.Log;
-
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -77,7 +74,7 @@ public class AttributeMapper {
       Type[] fieldArgTypes = aType.getActualTypeArguments();
       for (Type fieldArgType : fieldArgTypes) {
         final Class fieldArgClass = (Class) fieldArgType;
-        System.out.println("fieldArgClass = " + fieldArgClass);
+        Logger.debug("fieldArgClass = " + fieldArgClass);
 
         for (int i = 0; jsonArray.length() > i; i++) {
           Object obj = null;
